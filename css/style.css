@@ -74,10 +74,15 @@ header{
     display: grid;
     grid-template-columns: 1fr; /* Une seule colonne */
     place-items: center; /* Centre les éléments horizontalement et verticalement */
+    gap: 12px;
   }
   
   .logo {
     margin-top: 10px; 
+  }
+
+  .navigation {
+    gap: 40px;
   }
 
   .navtxt {
