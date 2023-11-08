@@ -69,7 +69,7 @@ header{
   margin-top: 50px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   header{
     display: grid;
     grid-template-columns: 1fr; /* Une seule colonne */
@@ -164,7 +164,7 @@ form button i{
   display: none!important;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .buttonText {
     display: none; /* Cacher le texte "Rechercher" */
   }
@@ -233,7 +233,7 @@ form button i{
   border: solid 1px #d9d9d9;
 }
 
-@media (max-width: 500px){
+@media (max-width: 768px){
   .filters-title{
     flex: 1 0 100%;
   }
@@ -288,7 +288,7 @@ footer ul li{
   margin-bottom: 12px;
 }
 
-@media (max-width: 500px){
+@media (max-width: 768px){
   footer{
     display: grid !important;
     text-align: start;
@@ -497,7 +497,7 @@ footer ul li{
   justify-content: space-between;
 }
 
-@media (max-width: 500px){
+@media (max-width: 768px){
   .hebergements-cards{
     display: grid;
     grid-template-columns: repeat(1,1fr);
@@ -594,7 +594,7 @@ footer ul li{
   margin-bottom: 50px;
 }
 
-@media (max-width: 500px){
+@media (max-width: 768px){
   .activity-cards{
     display: grid;
     grid-template-columns: repeat(1,1fr);
