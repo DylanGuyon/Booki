@@ -1,0 +1,623 @@
+/* Général */
+*{
+  margin:0;
+  font-family: 'Raleway', sans-serif;
+}
+
+:root {
+  --main-color: #0065FC;
+  --main-bg-color: #F2F2F2;
+  --filter-bg-color: #DEEBFF;
+}
+
+/****** Logo et Top Bar ***********/
+header{
+  display: flex;
+  justify-content: space-between;
+  font-size: 19px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.logo{
+  height: 41px;
+  margin-top: 10px;
+}
+
+.navigation {
+  list-style: none; /* Supprime les puces de liste */
+  padding: 0; /* Supprime la marge intérieure par défaut de la liste */
+  display: flex; /* Utilise un conteneur flex pour aligner les éléments horizontalement */
+  margin-top: 5px;
+  gap:24px;
+}
+  
+.navigation li {
+  margin-right: 20px; /* Espacement entre les éléments de la liste (ajustez selon vos besoins) */
+}
+
+.navigation li:hover{
+  color:#0065FC
+}
+
+.navtxt{
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.navtxt:after{
+  content: "";
+  position: absolute;
+  background-color: #0065FC;
+  height: 3px;
+  width: 0%;
+  left: 0;
+  top: -5px; /* Ajustez la position verticale de la barre supérieure par rapport au texte */
+  transition: width 0.3s ease;
+}
+
+.navtxt:hover:after{
+  width: 100%;
+}
+
+.navtxt:hover {
+  color: #0065FC; /* Change la couleur au survol */
+}
+
+.head{
+  margin-top: 50px;
+}
+
+@media (max-width: 500px) {
+  header{
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    place-items: center; /* Centre les éléments horizontalement et verticalement */
+  }
+  
+  .logo {
+    margin-top: 10px; 
+  }
+
+  .navtxt {
+    position: relative;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navtxt::before{
+    content: "";
+    position: absolute;
+    background-color: #F2F2F2;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    top: 25px; /* Ajustez la position verticale de la barre supérieure par rapport au texte */
+  }
+
+  .navtxt:after{
+    content: "";
+    position: absolute;
+    background-color: #0065FC;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    top: 25px; /* Ajustez la position verticale de la barre supérieure par rapport au texte */
+    transition: width 0.3s ease;
+  }
+
+  .head{
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+ .logo{
+  margin-left: 10px;
+ }
+
+ .head{
+  margin-left: 10px;
+ }
+}
+
+  /****** Barre de recherche ***********/
+
+.searchbar{
+  display: flex;
+}
+
+.fa-location-dot{
+  background-color: #F2F2F2;
+  padding: 16px 20px;
+  border-radius: 16px 0 0 16px;
+}
+
+.searchForm {
+    border-right: none;
+    border-left: none;
+    border-top: #F2F2F2 1px solid;
+    border-bottom: #F2F2F2 1px solid;
+    padding: 14.4px 20px;
+    box-sizing: border-box;
+    width: 240px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.button{
+    background-color: #0065FC;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0 16px 16px 0;
+    padding: 14.4px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+}
+
+form button i{
+  display: none!important;
+}
+
+@media (max-width: 500px) {
+  .buttonText {
+    display: none; /* Cacher le texte "Rechercher" */
+  }
+
+  .button i {
+    display: inline !important; /* Afficher l'icône "fa-magnifying-glass" */
+  }
+
+  .searchbar{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .searchbar{
+    margin-left: 10px;
+  }
+}
+
+/****** Filtres ***********/
+
+.filters{
+  display: flex;
+  flex-wrap: wrap;
+  gap:24px;
+  align-items: center;
+}
+
+.filters-title{
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.filters-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid #d9d9d9;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  padding:12px 18px;
+}
+.filters i{
+  margin-right: 12px;
+}
+.filters-button:hover{
+  background-color: #DEEBFF;
+}
+
+.info{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.subinfo{
+  font-size: 19px;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.fa-info {
+  padding: 9px 15px;
+  border-radius: 90%;
+  border: solid 1px #d9d9d9;
+}
+
+@media (max-width: 500px){
+  .filters-title{
+    flex: 1 0 100%;
+  }
+
+  .filters{
+    gap: 16px !important;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1024px){
+  .filters{
+    gap: 12px;
+    margin-left: 20px;
+  }
+
+  .info{
+    margin-left: 10px;
+  }
+}
+
+
+/****** Footer ***********/
+footer {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  background-color: #F2F2F2;
+  padding:24px;
+  gap:230px;
+}
+
+.footertitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 12px;
+}
+
+footer a {
+  font-size: 19px;
+  text-decoration: none;
+  color: black;
+}
+
+footer ul{
+  list-style: none;
+  padding:0;
+}
+footer ul li{
+  margin-bottom: 12px;
+}
+
+@media (max-width: 500px){
+  footer{
+    display: grid !important;
+    text-align: start;
+    gap: 55px;
+  }
+}
+
+@media (max-width: 1024px){
+  footer {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    background-color: #F2F2F2;
+    padding:24px;
+    gap:100px;
+  }
+}
+
+/* font awesome */
+
+.star_full{
+  color: #0065fc;
+}
+
+.star_empty{
+  color: #f2f2f2;
+}
+
+.fa-money-bill-wave{
+  color: #0065fc;
+}
+
+.fa-person{
+  color: #0065fc;
+}
+
+.fa-heart{
+  color: #0065fc;
+}
+
+.fa-fire{
+  color: #0065fc;
+}
+
+.fa-info{
+  color: #0065fc;
+}
+
+.fa-magnifying-glass{
+  color: #f2f2f2;
+}
+
+.fa-chart-line{
+  color:#0065FC
+}
+
+/* Ici met en place le style général des éléments de ton projet à savoir les titrages (h1, h2, h3), les paragraphes, les liens etc. */
+.head-title{ 
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.subtitle{
+  font-size: 19px; 
+}
+
+.fa-location-dot{
+    margin-top: 15px;
+}
+
+.head-section{
+  max-width: 1440px;
+  margin: auto;
+  display: grid;
+  gap:30px;
+}
+
+
+
+/* hébergement et populaire */
+
+#hebergementpopulaire{
+  display: grid;
+  gap:40px;
+  grid-template-columns: 2fr 1fr;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.hebergements{
+  border-radius: 24px;
+  padding: 32px;
+  background-color: #F2F2F2;
+}
+
+.hebergements-cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:24px;
+}
+
+.hebergements-title{
+  font-size: 22px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.hebergements-card{
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  /* width: 250px; */
+  line-height: 1.3em;
+  box-shadow: 0 0 16px #0000002e;
+  transition-duration: 0.1s;
+  text-decoration: none;
+  color: black;
+}
+
+.hebergements-card:hover{
+  -webkit-transform: scale(1.05);
+}
+
+.hebergements-img{
+  height: 112px;
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
+  border-radius: 18px 18px 0 0;
+}
+
+.hebergements-subtitle{
+  font-size: 18px;
+  margin-top: 20px; 
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.populaires{
+  border-radius: 24px;
+  padding: 32px;
+  background-color: #F2F2F2;
+}
+
+.populaires-title{
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.populaires-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-chart-line{
+  margin-right: 20px;
+}
+
+.card-link{
+  color: black;
+  text-decoration: none;
+}
+
+.popularcard-link{
+  color: black;
+  text-decoration: none;
+  display: flex;
+}
+
+.populaires-cards{
+  display: grid;
+  gap:40px;
+}
+.populaires-cards article{
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 0 0 16px #0000002e;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  transition-duration: 0.1s;
+}
+
+.populaires-cards article:hover{
+  -webkit-transform: scale(1.05);
+}
+
+.populaires-card a{
+  display: grid;
+  grid-template-columns: 33% auto;
+  gap:10px;
+}
+
+.populaires-cards img{
+  width: 100%;
+  object-fit: cover;
+  height: 130px;
+  border-radius: 20px 0 0 20px;
+}
+
+.populaires-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 500px){
+  .hebergements-cards{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:24px;
+  }
+
+  #hebergementpopulaire{
+    display: grid;
+    gap:40px;
+    grid-template-columns: repeat(1,1fr);
+    padding: 0px !important;
+  }
+
+  .populaires-cards{
+    display: grid;
+    gap:40px !important;
+    grid-template-columns: repeat(1,1fr) !important;
+  }
+
+  .hebergements {
+    order: 2;
+    background-color: white;
+  }
+
+  .populaires {
+    order: 1;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1024px){
+  #hebergementpopulaire{
+    display: grid;
+    gap:40px;
+    grid-template-columns: repeat(1,1fr);
+    padding: 30px;
+  }
+
+  .populaires-cards{
+    display: grid;
+    gap:20px;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .populaires-cards article{
+    height: 130px;
+    overflow: hidden;
+  }
+}
+
+/* activités */
+
+.activity{
+  max-width: 1440px;
+  margin: auto;
+}
+
+.activity-title{
+  font-size: 22px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.activity-card{
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 16px #0000002e;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  transition-duration: 0.1s;
+}
+
+.activity-card:hover{
+  -webkit-transform: scale(1.05);
+}
+
+.activity-img{
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  height: 380px;
+}
+
+.activity-cardtitle{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.activity-cards{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 70px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 500px){
+  .activity-cards{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .activity-img{
+    height: 150px;
+  }
+  
+}
+
+@media (max-width: 1024px){
+  .activity{
+    margin: 20px;
+  }
+
+  .activity-cards{
+    gap: 20px;
+  }
+
+  .activity-img{
+    height: 220px;
+  }
+}
